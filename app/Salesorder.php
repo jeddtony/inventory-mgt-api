@@ -16,4 +16,14 @@ class Salesorder extends Model
     {
         return $this->belongsToMany('App\Items');
     }
+
+    /**
+     * Relationship with Customer
+     * 
+     * @return Customer
+     */
+    public function customer()
+    {
+        return $this->belongsTo('App\Customer');
+    }
 }
