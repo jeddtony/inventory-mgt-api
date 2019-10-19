@@ -4,9 +4,10 @@ namespace Tests\Unit;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
-
+use App\User;
 class ExampleTest extends TestCase
 {
+    use RefreshDatabase;
     /**
      * A basic test example.
      *
@@ -14,6 +15,12 @@ class ExampleTest extends TestCase
      */
     public function testBasicTest()
     {
-        $this->assertTrue(true);
+       $user = new User();
+       $user->name ='abc';
+       $user->email = 'abc@email.com';
+       $user->password = 'qwerty';
+      
+        $this->assertTrue( $user->save());
+
     }
 }
