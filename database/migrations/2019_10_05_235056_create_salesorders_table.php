@@ -15,7 +15,7 @@ class CreateSalesordersTable extends Migration
     {
         Schema::create('salesorders', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('contact_id');
+            $table->bigInteger('customer_id');
             $table->string('sales_orders');
             $table->string('reference');
             $table->dateTime('order_date');
@@ -49,5 +49,6 @@ class CreateSalesordersTable extends Migration
     public function down()
     {
         Schema::dropIfExists('salesorders');
+        Schema::dropIfExists('item_salesorder');
     }
 }
