@@ -23,7 +23,11 @@ class CreatePackagesTable extends Migration
             $table->integer('shipment_id')->nullable();
             $table->timestamps();
         });
+
     }
+
+   
+    
 
     /**
      * Reverse the migrations.

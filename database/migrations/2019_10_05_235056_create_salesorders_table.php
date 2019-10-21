@@ -19,17 +19,17 @@ class CreateSalesordersTable extends Migration
             $table->string('sales_orders');
             $table->string('reference');
             $table->dateTime('order_date');
-            $table->dateTime('shipment_date');
-            $table->bigInteger('salesperson_id');
-            $table->integer('deliverymethod_id');
-            $table->double('discount');
-            $table->double('shipping_charges');
-            $table->double('miscellanous');
-            $table->string('customer_notes');
-            $table->string('terms_and_condition');
-            $table->double('total');
-            $table->integer('invoice_id');
-            $table->integer('package_id');
+            $table->dateTime('shipment_date')->nullable();
+            $table->bigInteger('user_id');
+            $table->integer('deliverymethod_id')->nullable();
+            $table->double('discount')->nullable();
+            $table->double('shipping_charges')->nullable();
+            $table->double('miscellanous')->nullable();
+            $table->string('customer_notes')->nullable();
+            $table->string('terms_and_condition')->nullable();
+            $table->double('total')->nullable();
+            $table->integer('invoice_id')->nullable();
+            $table->integer('package_id')->nullable();
             $table->timestamps();
         });
 
