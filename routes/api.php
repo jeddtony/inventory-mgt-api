@@ -24,4 +24,13 @@ Route::post('register', 'UserController@register');
     Route::group(['middleware' => ['jwt.verify']], function() {
         Route::get('user', 'UserController@getAuthenticatedUser');
         Route::get('closed', 'DataController@closed');
+
+        // Customer routes
+        Route::post('/customer', 'CustomersController@store');
+        Route::post('/customer/{customers}', 'CustomersController@update');
+        
+        // Vendor routes
+        Route::post('/vendor', 'VendorController@store');
+        Route::post('/vendor/{vendor}', 'VendorController@update');
+        
     });
