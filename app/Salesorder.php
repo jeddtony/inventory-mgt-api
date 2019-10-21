@@ -26,4 +26,14 @@ class Salesorder extends Model
     {
         return $this->belongsTo('App\Customer');
     }
+
+    /**
+     * Relationship with packages
+     * 
+     * @return Package
+     */
+    public function package()
+    {
+        return $this->belongsTo('App\Package');    
+    }
 }

@@ -15,4 +15,13 @@ class Package extends Model
     public function shipment(){
         return $this->belongsTo('App\Shipment');
     }
+
+    /**
+     * Relationship with Salesorder
+     * 
+     * @return Salesorder
+     */
+    public function salesorder(){
+        return $this->hasMany('App\Salesorder');
+    }
 }
